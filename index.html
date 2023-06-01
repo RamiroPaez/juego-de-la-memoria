@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" class="light dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <link rel="icon" href="./img/icon.ico" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <main>
+      <header class="head">
+        <h1>Memory Game</h1>
+        <section class="head-stats">
+          <div>
+            <div class="score">Score: <span>0</span></div>
+            <div>
+              <p>Time: <span id="timer">00:00</span></p>
+            </div>
+          </div>
+          <div class="theme-switcher">
+            <i class="fa-solid fa-sun fa-lg"></i>
+            <label class="switch">
+              <input type="checkbox" class="theme-input" />
+              <span class="slider round"></span>
+            </label>
+            <i class="fa-solid fa-moon fa-lg"></i>
+          </div>
+        </section>
+      </header>
+
+      <section class="container">
+        <div class="cell">
+          <div class="front" data-index="1">
+            <img src="./img/1.png" alt="" class="card-image" />
+          </div>
+          <div class="back"></div>
+        </div>
+        <div class="cell">
+          <div class="front" data-index="1">
+            <img src="./img/2.png" alt="" class="card-image" />
+          </div>
+          <div class="back"></div>
+        </div>
+        <div class="cell">
+          <div class="front" data-index="2">
+            <img src="./img/3.png" alt="" class="card-image" />
+          </div>
+          <div class="back"></div>
+        </div>
+        <div class="cell">
+          <div class="front" data-index="2">
+            <img src="./img/4.png" alt="" class="card-image" />
+          </div>
+          <div class="back"></div>
+        </div>
+        <div class="cell">
+          <div class="front" data-index="3">
+            <img src="./img/5.png" alt="" class="card-image" />
+          </div>
+          <div class="back"></div>
+        </div>
+        <div class="cell">
+          <div class="front" data-index="3">
+            <img src="./img/6.png" alt="" class="card-image" />
+          </div>
+          <div class="back"></div>
+        </div>
+        <div class="cell">
+          <div class="front" data-index="4">
+            <img src="./img/7.png" alt="" class="card-image" />
+          </div>
+          <div class="back"></div>
+        </div>
+        <div class="cell">
+          <div class="front" data-index="4">
+            <img src="./img/8.png" alt="" class="card-image" />
+          </div>
+          <div class="back"></div>
+        </div>
+        <div class="cell">
+          <div class="front" data-index="5">
+            <img src="./img/9.png" alt="" class="card-image" />
+          </div>
+          <div class="back"></div>
+        </div>
+        <div class="cell">
+          <div class="front" data-index="5">
+            <img src="./img/10.png" alt="" class="card-image" />
+          </div>
+          <div class="back"></div>
+        </div>
+        <div class="cell">
+          <div class="front" data-index="6">
+            <img src="./img/11.png" alt="" class="card-image" />
+          </div>
+          <div class="back"></div>
+        </div>
+        <div class="cell">
+          <div class="front" data-index="6">
+            <img src="./img/12.png" alt="" class="card-image" />
+          </div>
+          <div class="back"></div>
+        </div>
+      </section>
+    </main>
+    <div id="modal" class="win-modal hide-modal">
+      <div class="win-modal-content">
+        <h1>You win!</h1>
+        <p>Do you want to play again?</p>
+        <button class="btn btn-primary" id="restart">Restart</button>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

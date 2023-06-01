@@ -1,0 +1,269 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  box-sizing: border-box;
+}
+
+.dark {
+  --bg-color: #333;
+  --text-color: #f2f2f2;
+  --border-color: #9204b5;
+}
+
+.light {
+  --bg-color: #f2f2f2;
+  --text-color: #333;
+  --border-color: #9e05c4;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+main {
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.head {
+  width: 100%;
+  max-width: 480px;
+  border: 2px solid var(--border-color);
+  margin: auto;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  color: var(--text-color);
+  padding: 0 5px;
+}
+
+.head-stats {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.score {
+  margin-top: 10px;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 1rem;
+  margin: auto;
+  padding: 20px;
+}
+
+.cell div {
+  height: 130px;
+  border-radius: 4px;
+}
+
+.cell {
+  position: relative;
+  cursor: pointer;
+}
+
+.card-image {
+  width: 60px;
+  height: 60px;
+}
+
+.front {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--border-color);
+  background-color: var(--bg-color);
+  transform: rotateY(90deg);
+}
+
+.back {
+  background-color: var(--text-color);
+}
+
+img {
+  height: 100px;
+  width: 100px;
+}
+
+.flip {
+  transform: rotateY(0deg);
+}
+.match {
+  transform: rotateY(0deg);
+}
+
+.show {
+  transform: rotateY(0deg);
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.win-modal {
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  min-height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide-modal {
+  display: none;
+}
+
+.show-modal {
+  display: flex;
+}
+
+.win-modal-content {
+  background-color: var(--text-color);
+  padding: 20px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.win-modal-content h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: var(--border-color);
+}
+
+.win-modal-content p {
+  color: var(--bg-color);
+}
+
+.win-modal-content button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  background-color: var(--border-color);
+  color: var(--text-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+@media screen and (min-width > 480px) {
+  .card-image {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 770px) {
+  .head {
+    max-width: 760px;
+  }
+
+  .container {
+    grid-template-columns: repeat(4, auto);
+  }
+
+  .cell div {
+    height: 170px;
+  }
+  .card-image {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media screen and (min-width > 1024px) {
+  .card-image {
+    width: 100px;
+    height: 100px;
+  }
+}
